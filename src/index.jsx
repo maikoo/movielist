@@ -7,14 +7,30 @@ import movies from "./data/movieData.js";
 
 class MovieList extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-
-    };
+      searchterm: '',
+      movies: movies
+    }
   }
-  keyUp(e) {
+
+  // matchup (search) {
+  //   for (let key in this.state.movies) {
+  //     if(this.state.movies[key].title === this.state.searchterm) {
+  //       this.setState({
+  //         movies : this.state.movies[key]
+  //       })
+  //     }
+  //   }
+  // }
+
+  keyUp (e) {
+    this.setState({
+      searchterm : e.target.value
+    })
     console.log(e.target.value)
-    // console.log('clicked')
+    // console.log('state', this.state);
+
   }
 
   render() {
@@ -33,7 +49,10 @@ class MovieList extends React.Component {
         <br/>
         <div>
           <div>
-          <Movies movies={movies}/>
+          <Movies 
+            searchterm={this.state.searchterm}
+            movies={this.state.movies}
+          />
           </div>
 
         </div>
@@ -44,14 +63,3 @@ class MovieList extends React.Component {
 }
 
 ReactDOM.render(<MovieList />, document.getElementById("index"));
-
-// const Index = () => {
-//   return (
-//     <div>
-//       <div>Index renders!</div>
-//       <MovieList />
-
-//     </div>
-//   );
-  
-// };

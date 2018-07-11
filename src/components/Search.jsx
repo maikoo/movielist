@@ -5,8 +5,10 @@ var Search = (props) => (
   <div>
     <form className="navbar-form navbar-left" role="search">
       <div className="form-group">
-        <input onChange={props.onChange} type="text" className="form-control" placeholder="Search"
-
+        <input 
+          onChange={props.onChange} 
+          type="text" className="form-control" 
+          placeholder="Search"
         >
         </input>
       </div>

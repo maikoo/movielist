@@ -1,15 +1,21 @@
 import React from "react";
 import MovieListEntry from "./movielistentry.jsx";
 
-var Movies = (props) => (
+var Movies = ({movies, searchterm}) => (
   
   <ul className="list-group">
-    {props.movies.map((movie, ind) =>
-      <MovieListEntry key={ind} movie={movie}/>
-    )}
+    {movies.map((movie, ind) => {
+      if (movie.title.toLowerCase().includes(searchterm.toLowerCase())) {
+        // console.log('something');
+        return 
+        <MovieListEntry 
+          key={ind} 
+          movie={movie} 
+        />
+      }
+    })}
   </ul>
 );
-   
+  
 export default Movies;
 
-// window.Movies = Movies;
