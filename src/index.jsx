@@ -1,11 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import 'bootstrap';
 import Movies from "./components/Movies.jsx";
 import Search from "./components/Search.jsx";
 import movies from "./data/movieData.js";
 import AddMovie from "./components/AddMovie.jsx";
-
 class MovieList extends React.Component {
   constructor(props) {
     super(props)
