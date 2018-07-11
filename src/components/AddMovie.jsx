@@ -1,17 +1,17 @@
 import React from "react";
 
-const AddMovie = () => (
+const AddMovie = (props) => (
   <div>
     <form className="navbar-form navbar-left" role="search">
       <div className="form-group">
         <input
-          // onChange={props.onChange}
+          onChange={props.onChange}
           type="text" className="form-control"
           placeholder="Search"
         >
         </input>
       </div>
-      <button type="submit" className="btn btn-default">Add</button>
+      <button onClick={props.onClick} type="submit" className="btn btn-default">Add</button>
     </form>
   </div>
 );

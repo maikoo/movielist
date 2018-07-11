@@ -21,6 +21,7 @@ class MovieList extends React.Component {
       newItem : e.target.value
     })
   }
+
   keyUp (e) {
     this.setState({
       searchterm : e.target.value
@@ -29,7 +30,9 @@ class MovieList extends React.Component {
 
   }
   addItem (e) {
-    let movie = {title: e.target.value};
+    // e.preventDefault();
+    let movie = {title: this.state.newItem};
+    // let newMovies = [...movies, movie];
     this.setState({
       movies: [...movies, movie]
     })
