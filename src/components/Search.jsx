@@ -12,7 +12,7 @@ var Search = (props) => (
         >
         </input>
       </div>
-        <button onClick={props.onClick} type="submit" className="btn btn-default">Submit</button>
+        <button onClick={props.onClick} type="submit" className="btn btn-default">Go!</button>
     </form>
   </div>
   

@@ -7,15 +7,13 @@ var Movies = ({movies, searchterm}) => (
     {movies.map((movie, ind) => {
       if (movie.title.toLowerCase().includes(searchterm.toLowerCase())) {
         // console.log('something');
-        return 
-        <MovieListEntry 
-          key={ind} 
-          movie={movie} 
-        />
+        return <MovieListEntry key={ind} movie={movie} />
       }
-    })}
+    })
+    }
   </ul>
 );
   
+
 export default Movies;
 

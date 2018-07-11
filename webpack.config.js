@@ -36,5 +36,8 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    extensions: ['.jsx', '.css', '.js', '.json']
+  },
   plugins: [htmlWebpackPlugin]
 };
