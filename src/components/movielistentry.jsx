@@ -14,13 +14,8 @@ class MovieListEntry extends React.Component {
   }
 
   handleClick() {
-    // let currentVal = this.state.watched;
-    // this.setState({
-    //   watched: !currentVal
-    // })
-    // console.log(this.state);
     this.props.movie.watched = !this.props.movie.watched
-    // console.log(this.props.movie.watched);
+
   }
 
   toggle() {
@@ -61,7 +56,7 @@ class MovieListEntry extends React.Component {
           >
           Watched
           </button> */}
-          {watchEle}
+          {/* {watchEle} */}
           <div>{this.state.rating}</div>
           <div>{this.state.year}</div>
           <div>{this.state.imdb}</div>
@@ -78,8 +73,8 @@ class MovieListEntry extends React.Component {
           >
             {this.props.movie.title}
             {movieDetails}
-            
           </li>
+          {watchEle}
         </div>
       </div>
 
