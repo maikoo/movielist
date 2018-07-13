@@ -10,7 +10,9 @@ class MovieList extends React.Component {
     this.state = {
       newItem: '',
       searchterm: '',
-      movies: movies
+      movies: movies,
+      watched: [],
+      unwatched: movies
     }
   }
 
@@ -21,6 +23,7 @@ class MovieList extends React.Component {
   }
 
   keyUp (e) {
+    e.preventDefault()
     this.setState({
       searchterm : e.target.value
     })
@@ -33,9 +36,16 @@ class MovieList extends React.Component {
     // let newMovies = [...movies, movie];
     this.setState({
       movies: [...movies, movie]
+      // unwatched: [...unwatched, movie];
     })
   }
-
+  // onWatch (e) {
+    // let newMovie = e.target.val
+    // console.log(props.movie.title)
+  //   this.setState({
+  //     watched : []
+  //   })
+  // }
   render() {
     return (
       <div>
