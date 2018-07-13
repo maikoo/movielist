@@ -6,12 +6,8 @@ class MovieListEntry extends React.Component {
     this.state = ({
       watched: false
     })
-    // this.onChange = this.onChange.bind(this);
     this.toggle = this.toggle.bind(this);
   }
-  // onChange (e) {
-
-  // }
 
   toggle() {
     this.props.movie.watched = !this.props.movie.watched
@@ -21,7 +17,6 @@ class MovieListEntry extends React.Component {
       watched: !currentVal
     })
     console.log(this.state);
-    // console.log(e.target);
   }
 
   render() {
