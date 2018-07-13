@@ -4,25 +4,70 @@ class MovieListEntry extends React.Component {
   constructor(props) {
     super(props);
     this.state = ({
-      watched: false
+      watched: false,
+      rating: "Rating: " + this.props.movie.rating,
+      year: "Year: " + this.props.movie.year,
+      imdb: "imdb: " + this.props.movie.IMDB
     })
     this.toggle = this.toggle.bind(this);
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick() {
+    // let currentVal = this.state.watched;
+    // this.setState({
+    //   watched: !currentVal
+    // })
+    // console.log(this.state);
+    this.props.movie.watched = !this.props.movie.watched
+    // console.log(this.props.movie.watched);
   }
 
   toggle() {
-    this.props.movie.watched = !this.props.movie.watched
-    console.log(this.props.movie.watched);
     let currentVal = this.state.watched;
     this.setState({
       watched: !currentVal
     })
-    console.log(this.state);
+    // console.log(this.state);
   }
 
   render() {
-    let ele;
+    let movieDetails;
+    let watchEle;
     if (this.state.watched === true) {
-      ele = (<div>Watched</div>)
+      if (this.props.movie.watched === false) {
+        watchEle = (
+          <div 
+            onClick={this.handleClick}
+            style={{ color: 'green' }}
+          >
+          Watched
+          </div>
+        )
+      } else {
+        watchEle = (
+          <div
+            onClick={this.handleClick}
+            style={{ color: 'black' }}
+          >
+            Watched
+          </div>
+        )
+      }
+      movieDetails = (
+        <div>
+          {/* <button onClick={this.handleClick} 
+          style={{color:'green'}}
+          >
+          Watched
+          </button> */}
+          {watchEle}
+          <div>{this.state.rating}</div>
+          <div>{this.state.year}</div>
+          <div>{this.state.imdb}</div>
+          
+        </div>
+      )
     }
 
     return (
@@ -32,7 +77,7 @@ class MovieListEntry extends React.Component {
           className="list-group-item movie-list-entry"
           >
             {this.props.movie.title}
-            {ele}
+            {movieDetails}
             
           </li>
         </div>
