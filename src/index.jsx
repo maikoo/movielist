@@ -28,7 +28,7 @@ class MovieList extends React.Component {
 
   }
   addItem (e) {
-    // e.preventDefault();
+    e.preventDefault();
     let movie = {title: this.state.newItem};
     // let newMovies = [...movies, movie];
     this.setState({

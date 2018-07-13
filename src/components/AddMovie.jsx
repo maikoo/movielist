@@ -11,7 +11,7 @@ const AddMovie = (props) => (
         >
         </input>
       </div>
-      <button onClick={props.onClick} type="submit" className="btn btn-default">Add</button>
+      <button onClick={props.onClick} type="submit" className="btn btn-primary">Add</button>
     </form>
   </div>
 );
